@@ -1,2 +1,3 @@
-# ike
-ke  txt2excel
+## 调研Excel自动生成器
+### 将一定格式的txt文件转换为调研所需的excel文件
+### 献给恪恪
