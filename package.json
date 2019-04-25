@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/cpprookie/ike/issues"
   },
-  "homepage": "https://github.com/cpprookie/ike#readme"
+  "homepage": "https://github.com/cpprookie/ike#readme",
+  "dependencies": {
+    "xlsx": "^0.14.2"
+  }
 }
