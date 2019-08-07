@@ -22,6 +22,7 @@ function parseTxt(txtPath) {
     }
     return resArr;
   }, [])
+  console.log(dataArrs)
   const dataObj = dataArrs.reduce((obj, array) =>
     Object.assign(obj, parseSingleArea(array, obj.nextStartRow)), { nextStartRow: 0 }
   );
@@ -32,13 +33,17 @@ function parseTxt(txtPath) {
 function parseSingleArea(array, startRowNum = 0) {
   // date A
   // location B
-  // sampes G
+  // sampes G optional
   const [date, location, samples, ...areas] = array;
   const res = {}
   res[`A${startRowNum}`] = [[date]];
   res[`B${startRowNum}`] = [[location]];
-  res[`G${startRowNum}`] = splitPlants(samples);
-  Object.assign(res, parseAreas(areas, startRowNum));
+  const hasSamples = !isStartWIthNum(samples)
+  if (hasSamples) {
+    console.log(samples)
+    res[`G${startRowNum}`] = splitPlants(samples);
+  }
+  Object.assign(res, parseAreas(hasSamples ? areas : [samples, ...areas], startRowNum));
   // find endRowNum
   const maxRows = Math.max(...Object.keys(res).filter(k => k.includes(PLANS_COL || 'G')).map(p => parseInt(p.slice(1)) + res[p].length));
   res['nextStartRow'] = maxRows + 1;
