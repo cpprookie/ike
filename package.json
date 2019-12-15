@@ -1,0 +1,24 @@
+{
+  "name": "ike",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "excel": "node src/writeExcel.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cpprookie/ike.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/cpprookie/ike/issues"
+  },
+  "homepage": "https://github.com/cpprookie/ike#readme",
+  "dependencies": {
+    "xlsx": "^0.14.2"
+  }
+}
