@@ -19,6 +19,6 @@
   },
   "homepage": "https://github.com/cpprookie/ike#readme",
   "dependencies": {
-    "xlsx": "^0.14.2"
+    "xlsx": "^0.17.0"
   }
 }
